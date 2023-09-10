@@ -1,0 +1,59 @@
+.App {
+  font-family: sans-serif;
+  text-align: left;
+}
+.sidebar {
+  margin: 20px auto;
+  display: flex;
+  gap: 10px;
+  max-width: 200px;
+  min-height: 500px;
+  flex-direction: column;
+  background-color: black;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.sidebar button {
+  all: unset;
+  position: relative;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  padding: 20px;
+  color: grey;
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0),
+    rgba(0, 0, 0, 0)
+  );
+  transition: all 0.5s ease;
+}
+.sidebar svg {
+  font-size: 20px;
+}
+.sidebar button:is(:hover, :focus) {
+  color: white;
+  background-image: linear-gradient(
+    90deg,
+    rgba(230, 52, 52, 0.2),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.sidebar button::before {
+  position: absolute;
+  content: "";
+  width: 4px;
+  top: 0;
+  left: -4px;
+  bottom: 0;
+  border-radius: 0px 2px 2px 0px;
+  background-color: transparent;
+  transform: translateX(0);
+  transition: transform 0.2s ease;
+}
+.sidebar button:is(:hover, :focus)::before {
+  /* width: 4px; */
+  transform: translateX(4px);
+  background-color: rgb(230, 52, 52);
+}
